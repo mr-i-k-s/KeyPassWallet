@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyPassWallet", "KeyPassWallet\KeyPassWallet.csproj", "{8E184E45-0273-488B-A22E-52C7F7236590}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E184E45-0273-488B-A22E-52C7F7236590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E184E45-0273-488B-A22E-52C7F7236590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E184E45-0273-488B-A22E-52C7F7236590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E184E45-0273-488B-A22E-52C7F7236590}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9645E57B-D26B-41FA-B21A-6069474FC365}
+	EndGlobalSection
+EndGlobal
