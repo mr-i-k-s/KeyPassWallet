@@ -1,6 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using KeyPassWallet.MVVM.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,11 +16,13 @@ namespace KeyPassWallet.MVVM.ViewModels
         #region Variables
 
         [ObservableProperty]
-        private List<KeyPassWallet> _wallets;
+        private KeyWallet _selectedWallet;
 
-        #endregion Variables
+		#endregion Variables
 
-        #region Properties
+		#region Properties
+
+		public ObservableCollection<KeyWallet> Wallets { get; set; }
 
         #endregion Properties
 
@@ -28,30 +33,36 @@ namespace KeyPassWallet.MVVM.ViewModels
             
         }
 
-        #endregion Constructors
+		#endregion Constructors
 
-        #region Methodes
+		#region Methodes
 
-        #endregion Methodes 
+		#endregion Methodes 
 
-        #region Observable Property Methodes
+		#region Observable Property Methodes
 
-        #endregion Observable Property Methodes
+		#endregion Observable Property Methodes
 
-        #region RelayCommands
+		#region RelayCommands
 
-        #endregion RelayCommands
+		[RelayCommand]
+		private void SelectWallet()
+		{
 
-        #region Messages
+		}
 
-        #endregion Messages
+		#endregion RelayCommands
 
-        #region Events
+		#region Messages
 
-        #endregion Events
+		#endregion Messages
 
-        #region Dispose
+		#region Events
 
-        #endregion Dispose
-    }
+		#endregion Events
+
+		#region Dispose
+
+		#endregion Dispose
+	}
 }
