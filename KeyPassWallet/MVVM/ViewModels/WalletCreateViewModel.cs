@@ -1,38 +1,29 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
+﻿using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using KeyPassWallet.Messages;
-using KeyPassWallet.MVVM.Models;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using WeatherApp.MVVM.ViewModels;
 
 namespace KeyPassWallet.MVVM.ViewModels
 {
-	public partial class WalletExplorerViewModel : ViewModelBase
+	public partial class WalletCreateViewModel : ViewModelBase
 	{
         #region Variables
 
-        [ObservableProperty]
-        private KeyWallet _selectedWallet;
+        #endregion Variables
 
-		#endregion Variables
-
-		#region Properties
-
-		public ObservableCollection<KeyWallet> Wallets { get; set; }
+        #region Properties
 
         #endregion Properties
 
         #region Constructors
 
-        public WalletExplorerViewModel()
+        public WalletCreateViewModel()
         {
             
         }
@@ -45,35 +36,22 @@ namespace KeyPassWallet.MVVM.ViewModels
 
 		#region Observable Property Methodes
 
-		partial void OnSelectedWalletChanged(KeyWallet value)
-		{
-			if(value != null)
-			{
-				WeakReferenceMessenger.Default.Send(new WalletSelectionChangedMessage(value));
-			}
-		}
-
 		#endregion Observable Property Methodes
 
 		#region RelayCommands
 
 		[RelayCommand]
-		private void CreateWallet()
+		private void Create()
 		{
-			var viewModel = App.ServiceProvider.GetRequiredService<WalletCreateViewModel>();
+			var viewModel = App.ServiceProvider.GetRequiredService<WalletExplorerViewModel>();
 			WeakReferenceMessenger.Default.Send(new ViewModelChangedMessage(viewModel));
 		}
 
 		[RelayCommand]
-		private void ImportWallet()
+		private void Back()
 		{
-
-		}
-
-		[RelayCommand]
-		private void DeleteWallet()
-		{
-
+			var viewModel = App.ServiceProvider.GetRequiredService<WalletExplorerViewModel>();
+			WeakReferenceMessenger.Default.Send(new ViewModelChangedMessage(viewModel));
 		}
 
 		#endregion RelayCommands

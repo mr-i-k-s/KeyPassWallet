@@ -41,9 +41,13 @@ namespace KeyPassWallet
 
 			// Register ViewModels
 			services.AddTransient<MainWindowViewModel>();
+			services.AddTransient<WalletExplorerViewModel>();
+			services.AddTransient<WalletCreateViewModel>();
 
 			// Register Views
-			services.AddSingleton<MainWindowView>();
+			services.AddTransient<MainWindowView>();
+			services.AddTransient<WalletExplorerView>();
+			services.AddTransient<WalletCreateView>();
 		}
 	}
 

@@ -3,12 +3,26 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:KeyPassWallet.MVVM.Views"
+        xmlns:v="clr-namespace:KeyPassWallet.MVVM.Views"
+        xmlns:vm="clr-namespace:KeyPassWallet.MVVM.ViewModels"
         mc:Ignorable="d"
         Title="KeyPassWallet"
         WindowStartupLocation="CenterScreen"
-        WindowState="Maximized">
+        WindowState="Maximized"
+        Background="AliceBlue"
+        d:Height="1080"
+        d:Width="1920">
+    
     <Grid>
-        
+        <ContentControl Content="{Binding CurrViewModel}">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type vm:WalletExplorerViewModel}">
+                    <v:WalletExplorerView/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type vm:WalletCreateViewModel}">
+                    <v:WalletCreateView/>
+                </DataTemplate>
+            </ContentControl.Resources>
+        </ContentControl>
     </Grid>
 </Window>

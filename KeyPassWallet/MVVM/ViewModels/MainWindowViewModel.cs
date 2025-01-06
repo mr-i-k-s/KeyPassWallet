@@ -1,4 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Messaging;
+using KeyPassWallet.Messages;
+using KeyPassWallet.MVVM.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +11,13 @@ using WeatherApp.MVVM.ViewModels;
 
 namespace KeyPassWallet.MVVM.ViewModels
 {
-	public partial class MainWindowViewModel : ViewModelBase
+	public partial class MainWindowViewModel : ViewModelBase, IRecipient<ViewModelChangedMessage>
+
 	{
         #region Variables
 
         [ObservableProperty]
-        private ViewModelBase currViewModel;
+        private ViewModelBase _currViewModel;
 
         #endregion Variables
 
@@ -29,29 +33,41 @@ namespace KeyPassWallet.MVVM.ViewModels
 
         public MainWindowViewModel()
         {
-            
-        }
+			CurrViewModel = new WalletExplorerViewModel();
 
-        #endregion Methodes 
+			WeakReferenceMessenger.Default.Register<ViewModelChangedMessage>(this);
+		}
 
-        #region Observable Property Methodes
+		#endregion Methodes 
 
-        #endregion Observable Property Methodes
+		#region Observable Property Methodes
 
-        #region RelayCommands
+		#endregion Observable Property Methodes
 
-        #endregion RelayCommands
+		#region RelayCommands
 
-        #region Messages
+		#endregion RelayCommands
 
-        #endregion Messages
+		#region Messages
 
-        #region Events
+		public void Receive(ViewModelChangedMessage message)
+		{
+			var viewModel = message.Value as ViewModelBase;
 
-        #endregion Events
+			if (viewModel != null)
+            {
+				CurrViewModel = viewModel;
+			}
+		}
 
-        #region Dispose
+		#endregion Messages
 
-        #endregion Dispose
-    }
+		#region Events
+
+		#endregion Events
+
+		#region Dispose
+
+		#endregion Dispose
+	}
 }
