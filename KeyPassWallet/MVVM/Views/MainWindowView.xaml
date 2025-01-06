@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KeyPassWallet.MVVM.Views"
         mc:Ignorable="d"
-        Title="MainWindowView" Height="450" Width="800">
+        Title="KeyPassWallet"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized">
     <Grid>
         
     </Grid>
