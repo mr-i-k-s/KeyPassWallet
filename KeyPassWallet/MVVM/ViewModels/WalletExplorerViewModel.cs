@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
+using KeyPassWallet.Messages;
 using KeyPassWallet.MVVM.Models;
 using System;
 using System.Collections.Generic;
@@ -12,17 +14,6 @@ using WeatherApp.MVVM.ViewModels;
 
 namespace KeyPassWallet.MVVM.ViewModels
 {
-	public class WalletSelectedEventArgs : EventArgs
-	{
-        public KeyWallet Wallet { get; set; }
-
-        public WalletSelectedEventArgs(KeyWallet wallet)
-        {
-			Wallet = wallet;
-
-		}
-    }
-
 	public partial class WalletExplorerViewModel : ViewModelBase
 	{
         #region Variables
@@ -52,6 +43,14 @@ namespace KeyPassWallet.MVVM.ViewModels
 		#endregion Methodes 
 
 		#region Observable Property Methodes
+
+		partial void OnSelectedWalletChanged(KeyWallet value)
+		{
+			if(value != null)
+			{
+				WeakReferenceMessenger.Default.Send(new WalletSelectionChangedMessage(value));
+			}
+		}
 
 		#endregion Observable Property Methodes
 
