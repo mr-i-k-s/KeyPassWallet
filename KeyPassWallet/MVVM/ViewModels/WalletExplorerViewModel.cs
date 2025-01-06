@@ -7,10 +7,22 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using WeatherApp.MVVM.ViewModels;
 
 namespace KeyPassWallet.MVVM.ViewModels
 {
+	public class WalletSelectedEventArgs : EventArgs
+	{
+        public KeyWallet Wallet { get; set; }
+
+        public WalletSelectedEventArgs(KeyWallet wallet)
+        {
+			Wallet = wallet;
+
+		}
+    }
+
 	public partial class WalletExplorerViewModel : ViewModelBase
 	{
         #region Variables
@@ -44,12 +56,6 @@ namespace KeyPassWallet.MVVM.ViewModels
 		#endregion Observable Property Methodes
 
 		#region RelayCommands
-
-		[RelayCommand]
-		private void SelectWallet()
-		{
-
-		}
 
 		#endregion RelayCommands
 

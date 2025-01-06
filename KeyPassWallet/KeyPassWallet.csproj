@@ -12,6 +12,7 @@
     <Folder Include="MVVM\Views\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Assets\" />
+    <Folder Include="Messages\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
