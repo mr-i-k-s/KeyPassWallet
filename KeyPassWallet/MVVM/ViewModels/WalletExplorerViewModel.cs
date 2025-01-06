@@ -56,6 +56,18 @@ namespace KeyPassWallet.MVVM.ViewModels
 
 		#region RelayCommands
 
+		[RelayCommand]
+		private void CreateNewWallet()
+		{
+
+		}
+
+		[RelayCommand]
+		private void OpenExistingWallet()
+		{
+
+		}
+
 		#endregion RelayCommands
 
 		#region Messages
