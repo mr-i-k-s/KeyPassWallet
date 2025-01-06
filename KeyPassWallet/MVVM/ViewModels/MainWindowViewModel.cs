@@ -8,7 +8,7 @@ using WeatherApp.MVVM.ViewModels;
 
 namespace KeyPassWallet.MVVM.ViewModels
 {
-	public class MainWindowViewModel : ViewModelBase
+	public partial class MainWindowViewModel : ViewModelBase
 	{
         #region Variables
 

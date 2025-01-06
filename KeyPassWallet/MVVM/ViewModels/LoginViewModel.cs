@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,9 +9,12 @@ using WeatherApp.MVVM.ViewModels;
 
 namespace KeyPassWallet.MVVM.ViewModels
 {
-	public class LoginViewModel : ViewModelBase
+	public partial class LoginViewModel : ViewModelBase
 	{
         #region Variables
+
+        [ObservableProperty]
+        private string _password;
 
         #endregion Variables
 
@@ -24,30 +29,42 @@ namespace KeyPassWallet.MVVM.ViewModels
             
         }
 
-        #endregion Constructors
+		#endregion Constructors
 
-        #region Methodes
+		#region Methodes
 
-        #endregion Methodes 
+		#endregion Methodes 
 
-        #region Observable Property Methodes
+		#region Observable Property Methodes
 
-        #endregion Observable Property Methodes
+		#endregion Observable Property Methodes
 
-        #region RelayCommands
+		#region RelayCommands
 
-        #endregion RelayCommands
+		[RelayCommand]
+		private void OpenWallet()
+		{
+			
+		}
 
-        #region Messages
+		[RelayCommand]
+		private void CreateNewWallet()
+		{
 
-        #endregion Messages
+		}
 
-        #region Events
+		#endregion RelayCommands
 
-        #endregion Events
+		#region Messages
 
-        #region Dispose
+		#endregion Messages
 
-        #endregion Dispose
-    }
+		#region Events
+
+		#endregion Events
+
+		#region Dispose
+
+		#endregion Dispose
+	}
 }
