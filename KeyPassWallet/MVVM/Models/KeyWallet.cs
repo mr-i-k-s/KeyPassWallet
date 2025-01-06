@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KeyPassWallet.MVVM.Models
 {
-	public class KeyPassWallet
+	public class KeyWallet
 	{
         public string Title { get; set; }
         public List<KeyPassData> Keys { get; set; }
